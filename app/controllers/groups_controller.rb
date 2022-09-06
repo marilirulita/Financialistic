@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups.all
   end
 
   # GET /groups/1 or /groups/1.json
@@ -24,15 +24,11 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
 
-    respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
-        format.json { render :show, status: :created, location: @group }
+        redirect_to groups_path
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /groups/1 or /groups/1.json
@@ -66,6 +62,6 @@ class GroupsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def group_params
-      params.fetch(:group, {})
+      params.require(:group).permit(:name, :icon, :user_id)
     end
 end

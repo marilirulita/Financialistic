@@ -5,6 +5,10 @@
 <div id="groups">
   <% @groups.each do |group| %>
     <%= render group %>
+    <div>
+    <p><%= group.name %></p>
+    <p>Here is the amount of all transactions of this category</p>
+    </div>
     <p>
       <%= link_to "Show this group", group %>
     </p>
