@@ -6,12 +6,12 @@ RSpec.describe User, type: :model do
     before { subject.save }
 
     it 'should not be valid without a name' do
-      subject.name = nil 
+      subject.name = nil
       expect(subject).to_not be_valid
     end
 
     it 'should not be valid without an email' do
-      subject.email = nil 
+      subject.email = nil
       expect(subject).to_not be_valid
     end
   end
