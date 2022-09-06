@@ -4,7 +4,7 @@ class MovesController < ApplicationController
 
   # GET /moves or /moves.json
   def index
-    @moves = Move.all
+    @moves = current_user.moves.all
   end
 
   # GET /moves/1 or /moves/1.json
@@ -24,15 +24,11 @@ class MovesController < ApplicationController
   def create
     @move = Move.new(move_params)
 
-    respond_to do |format|
       if @move.save
-        format.html { redirect_to move_url(@move), notice: "Move was successfully created." }
-        format.json { render :show, status: :created, location: @move }
+        redirect_to moves_path, notice: "Move was successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @move.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /moves/1 or /moves/1.json
@@ -66,6 +62,6 @@ class MovesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def move_params
-      params.fetch(:move, {})
+      params.require(:move).permit(:name, :amount, :author_id)
     end
 end
