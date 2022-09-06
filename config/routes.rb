@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  resources :moves
-
   devise_for :users
-  resources :users
+
   resources :groups
+  resources :moves
 
   root to: "users#index"
 
