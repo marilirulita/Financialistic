@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :groups
   has_many :moves, class_name: "Move", foreign_key: "author_id"
+
+  validates :name, presence: true
 end
