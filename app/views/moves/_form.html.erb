@@ -1,6 +1,8 @@
 <%= form_with(model: move) do |form| %>
 <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Movement name" %>
   <%= form.number_field :amount, autofocus: true, placeholder: "Amount" %>
+
+  <span>Here is missing an option for select categories, it can be one or more</span>
   <%= form.hidden_field :author_id, value: current_user.id %>
 
   <% if move.errors.any? %>
@@ -16,6 +18,6 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Save" %>
   </div>
 <% end %>
