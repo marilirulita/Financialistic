@@ -1,4 +1,4 @@
 class Move < ApplicationRecord
-  belongs_to :user, class_name: "user", foreign_key: "author_id"
+  belongs_to :author, class_name: "User", foreign_key: "author_id"
   has_many :groups
 end
