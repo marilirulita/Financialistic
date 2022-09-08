@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ /* font face imports */
  @font-face {
   font-family: 'NovaBold';
   src: url('ProximaNova-Bold.ttf');
@@ -35,12 +37,8 @@
   url('KittenSwash.woff'),
   url('KittenSwash.ttf');
 }
-/* main_color: #3778c2 */
-/* secondary_color: #5fb523 */
-/* text_color: #434b54 */
-/* primary-color = #3778c2;
-secondary-color: #5fb523;
-text-color: #434b54; */
+
+/* default configuration */
 * { 
   margin: 0;
   padding: 0;
@@ -57,6 +55,7 @@ body {
   height: 100vh;
 }
 
+/* splash view*/
 .content_splash {
   height: 100%;
   display: flex;
@@ -105,4 +104,70 @@ body {
   text-align: center;
   font-size: 3em;
   font-weight: 100;
+}
+
+/* Log in  and sign up views */
+
+/* main_color: #3778c2 */
+/* secondary_color: #5fb523 */
+/* text_color: #434b54 */
+/* primary-color = #3778c2;
+secondary-color: #5fb523;
+text-color: #434b54; */
+.content_login {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content_login nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3778c2;
+  color: #fff;
+  padding: 0.5rem;
+  font-family: 'NovaLight';
+}
+
+.content_login nav a {
+  color: #fff;
+  font-weight: bolder;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding-right: 2rem;
+}
+
+.content_login nav input[type="submit"] {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  font-size: 1.2em;
+}
+
+.content_login div {
+  display: flex;
+  flex-direction: column;
+}
+
+.content_login div input {
+  border: none;
+  padding: 1rem;
+  font-family: 'NovaLight';
+  font-size: 1.2em;
+  background-color: #fff;
+}
+
+.content_login .shared_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  font-family: 'NovaLight';
+  font-size: 1.2em;
+}
+
+.content_login .shared_link a {
+  color: #434b54;
+  text-decoration: none;
 }
