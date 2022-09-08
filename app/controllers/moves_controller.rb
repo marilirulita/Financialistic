@@ -27,7 +27,7 @@ class MovesController < ApplicationController
     
       if @move.save
         @group.group_moves.create(move_id: @move.id)
-        redirect_to groups_path, notice: "Move was successfully created."
+        redirect_to group_path(@group)
       else
         render :new, status: :unprocessable_entity
       end

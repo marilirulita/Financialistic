@@ -1,9 +1,13 @@
-<h1>New group</h1>
-
-<%= render "form", group: @group %>
-
-<br>
-
-<div>
-  <%= link_to "Back", groups_path %>
+<div class="content_login">
+  <%= form_with(model: @group) do |form| %>
+    <nav>
+      <%= link_to "<", :back %>
+      <%= form.submit "Save" %>
+    </nav>
+    <div>
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Category name" %>
+      <%= form.text_field :icon, autofocus: true, autocomplete: "name", placeholder: "Icon name" %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+  <% end %>
 </div>

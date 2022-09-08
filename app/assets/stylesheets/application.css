@@ -176,15 +176,14 @@ body {
   text-decoration: none;
 }
 
+.content_login select {
+  width: 100%;
+  font-family: 'NovaLight';
+  font-size: 1.5em;
+
+}
+
 /* home/ transaction view*/
-
-
-/* main_color: #3778c2 */
-/* secondary_color: #5fb523 */
-/* text_color: #434b54 */
-/* primary-color = #3778c2;
-secondary-color: #5fb523;
-text-color: #434b54; */
 
 .container_group {
   display: flex;
