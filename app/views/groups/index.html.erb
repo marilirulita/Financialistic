@@ -1,40 +1,25 @@
-<nav>
-  <div>
-    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span ></span>
-    </button>
-    <a href="#"><%= "Categories" || BudgetApp %></a>
-    <ul>
-        <li>
-        
-        </li>
-        </ul>
-    <div>
-      <ul>
-        <li>
-          <a href="/">Categories</a>
-        </li>
-        <li>
-          <a href="/sign_out">Log out</a>
-        </li>
-      </ul>
+<div class="container_home">
+  <nav>
+    <span>icon</span>
+    <h2>CATEGORIES</h2>
+    <a href="/sign_out">Log out</a>
+  </nav>
+  <div class="container_group">
+
+  <div class="group_display" >
+    <% @groups.each do |group|%>
+      <div onclick="window.location='/groups/<%=group.id%>'" class="group_element" >
+        <i class="fa <%= group.icon %> fa-4x col p-0 d-flex justify-content-center align-self-center" aria-hidden="true"></i>
+        <span>icon</span>
+        <div>
+          <p><%= group.name %></p>
+          <span >$<%= group.total_amount || 0 %></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="add_button" >
+    <%= button_to 'Add a new category', new_group_path, method: :get %>
+  </div>
     </div>
-  </div>
-</nav>
-
-<div>
-<% @groups.each do |group|%>
-<div onclick="window.location='/groups/<%=group.id%>'" >
-<i class="fa <%= group.icon %> fa-4x col p-0 d-flex justify-content-center align-self-center" aria-hidden="true"></i>
-  
-<div >
-  <p ><%= group.name %></p>
-  <p >$<%= group.total_amount || 0 %></p>
-  </div>
-  </div>
-<% end %>
-</div>
-
-<div >
-<%= button_to 'Add Category', new_group_path, method: :get %>
 </div>
