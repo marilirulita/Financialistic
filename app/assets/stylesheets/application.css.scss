@@ -14,10 +14,10 @@
  *= require_self
  */
 
- @import "font-awesome";
+@import "font-awesome";
 
- /* font face imports */
- @font-face {
+/* font face imports */
+@font-face {
   font-family: 'NovaBold';
   src: url('ProximaNova-Bold.ttf');
 }
@@ -34,14 +34,14 @@
 
 @font-face {
   font-family: 'KittenSwash';
-  src:     
-  url('KittenSwash.woff2'),
-  url('KittenSwash.woff'),
-  url('KittenSwash.ttf');
+  src:
+    url('KittenSwash.woff2'),
+    url('KittenSwash.woff'),
+    url('KittenSwash.ttf');
 }
 
 /* default configuration */
-* { 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -58,7 +58,7 @@ body {
   height: 100vh;
 }
 
-/* splash view*/
+/* splash view */
 .content_splash,
 .container_home {
   height: 100%;
@@ -80,9 +80,20 @@ body {
   padding: 1rem;
 }
 
+.add_button button {
+  border: 1px solid white;
+  border-radius: 3px;
+  background-color: inherit;
+  color: #fff;
+  font-family: 'NovaLight', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.5em;
+  padding: 1rem;
+  width: 100%;
+}
+
 .content_splash nav button,
 .reset_button {
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', sans-serif;
   border: none;
   padding: 1rem;
   border-radius: 3px;
@@ -100,11 +111,10 @@ body {
   width: 100%;
   color: #434b54;
   font-size: 1.5em;
- 
 }
 
 .content_splash h1 {
-  font-family: 'KittenSwash';
+  font-family: 'KittenSwash', 'Courier New', Courier, monospace;
   color: #434b54;
   text-align: center;
   font-size: 3em;
@@ -128,7 +138,7 @@ body {
   background-color: #3778c2;
   color: #fff;
   padding: 0.5rem;
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', 'Courier New', Courier, monospace;
 }
 
 .content_login nav a,
@@ -138,7 +148,6 @@ body {
   font-weight: bolder;
   text-decoration: none;
   font-size: 1.5em;
-
 }
 
 .content_login nav input[type="submit"],
@@ -160,7 +169,7 @@ body {
 .content_signup div input {
   border: none;
   padding: 1rem;
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', sans-serif;
   font-size: 1.2em;
   background-color: #fff;
 }
@@ -169,7 +178,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', sans-serif;
   font-size: 1.2em;
 }
 
@@ -180,12 +189,11 @@ body {
 
 .content_login select {
   width: 100%;
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.5em;
-
 }
 
-/* home/ transaction view*/
+/* home/ transaction view */
 
 .container_group {
   display: flex;
@@ -193,6 +201,7 @@ body {
   justify-content: space-between;
   height: 100%;
 }
+
 .group_display {
   margin: 1rem;
   overflow-y: scroll;
@@ -202,8 +211,8 @@ body {
 .group_element {
   display: flex;
   padding: 1rem;
- margin-bottom: 1rem;
- background-color: #fff;
+  margin-bottom: 1rem;
+  background-color: #fff;
 }
 
 .group_element i {
@@ -213,10 +222,9 @@ body {
 .group_element div {
   display: flex;
   flex: 1;
-  font-family: 'NovaLight';
+  font-family: 'NovaLight', sans-serif;
   font-size: 1.5em;
   justify-content: space-between;
-
 }
 
 .group_element div p {
@@ -234,21 +242,10 @@ body {
   padding: 1rem;
 }
 
-.add_button button {
-  border: 1px solid white;
-  border-radius: 3px;
-background-color: inherit;
-  color: #fff;
-  font-family: 'NovaLight';
-  font-size: 1.5em;
-  padding: 1rem;
-  width: 100%;
-}
-
 .total_amount {
   text-align: center;
   padding: 1rem;
   background-color: #fff;
   color: #1b1e22;
-  font-family: 'NovaBold';
+  font-family: 'NovaBold', sans-serif;
 }
