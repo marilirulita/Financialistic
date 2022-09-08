@@ -1,7 +1,4 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_group, only: %i[ show edit update destroy ]
-
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups.all
@@ -9,11 +6,17 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
+    @group = Group.find(params[:id])
+    @moves = @group.group_moves.map(&:move_id)
+    @moves = Move.where(id: @moves).sort_by(&:created_at).reverse
+    @total = @moves.inject(0) { |sum, move| sum + move.amount }
+    @title = @group.name
   end
 
   # GET /groups/new
   def new
     @group = Group.new
+    @title = 'New Category'
   end
 
   # GET /groups/1/edit
@@ -55,10 +58,6 @@ class GroupsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def group_params

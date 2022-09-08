@@ -1,10 +1,48 @@
-<p style="color: green"><%= notice %></p>
+<nav>
+  <div>
+    <ul >
+        <li >
+        <%= link_to '<', '/'%>
+        </li>
+        </ul>
+    <a href="#"><%= @title.upcase || BudgetApp %></a>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+    </button>
+    <div>
+      <ul>
+        <li>
+          <a href="/">Categories</a>
+        </li>
+        <li>
+          <a href="/sign_out">Log out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<%= render @group %>
+<p>Total Spent: $ <%= @total || 0 %></p>
 
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
+  <% @moves.each do |move| %>
+  <div >
+    <div>
+      <div>
+        <p>
+          <%= move.name %>
+        </p>
+      </div>
+      <div>
+        <p>
+          $ <%= move.amount %>
+        </p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
+<div>
+<%= button_to 'Add Transaction', new_group_move_path(params[:id]), method: :get %>
 </div>

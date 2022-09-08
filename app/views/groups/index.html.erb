@@ -1,18 +1,40 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
+<nav>
+  <div>
+    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span ></span>
+    </button>
+    <a href="#"><%= "Categories" || BudgetApp %></a>
+    <ul>
+        <li>
+        
+        </li>
+        </ul>
     <div>
-    <p><%= group.name %></p>
-    <p>Here is the amount of all transactions of this category</p>
+      <ul>
+        <li>
+          <a href="/">Categories</a>
+        </li>
+        <li>
+          <a href="/sign_out">Log out</a>
+        </li>
+      </ul>
     </div>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+  </div>
+</nav>
+
+<div>
+<% @groups.each do |group|%>
+<div onclick="window.location='/groups/<%=group.id%>'" >
+<i class="fa <%= group.icon %> fa-4x col p-0 d-flex justify-content-center align-self-center" aria-hidden="true"></i>
+  
+<div >
+  <p ><%= group.name %></p>
+  <p >$<%= group.total_amount || 0 %></p>
+  </div>
+  </div>
+<% end %>
 </div>
 
-<%= link_to "New group", new_group_path %>
+<div >
+<%= button_to 'Add Category', new_group_path, method: :get %>
+</div>

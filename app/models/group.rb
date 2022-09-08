@@ -5,4 +5,13 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+
+  def total_amount
+    moves = group_moves.includes([:move])
+    total = 0
+    moves.each do |move|
+      total += move.move.amount
+    end
+    total
+  end
 end

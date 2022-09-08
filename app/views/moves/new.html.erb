@@ -1,9 +1,19 @@
-<h1>New move</h1>
+<%= form_with url: group_moves_path, scope: :move, method: :post do |f| %>
+<nav >
+  <div >
+    <ul >
+        <li >
+        <%= link_to '<', "/groups/#{params[:group_id]}" %>
+        </li>
+        </ul>
+    <a href="#"><%= "New Transaction" || BudgetApp %></a>
+  <%= f.submit 'Add' %>
+  
+  </div>
+</nav>
 
-<%= render "form", move: @move %>
-
-<br>
-
-<div>
-  <%= link_to "Back", moves_path %>
-</div>
+  <%= f.text_field :name, required: true, placeholder: 'Transaction Name' %>
+  <%= f.number_field :amount, step: 0.01, placeholder: 'Amount' %>
+  <%= f.select :group_id, options_for_select(current_user.groups.map { |g| [g.name, g.id] }, selected: @group.id), {} %>
+  <%= f.hidden_field :author_id, value: current_user.id %>
+<% end %>
