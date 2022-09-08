@@ -1,48 +1,23 @@
-<nav>
-  <div>
-    <ul >
-        <li >
-        <%= link_to '<', '/'%>
-        </li>
-        </ul>
-    <a href="#"><%= @title.upcase || BudgetApp %></a>
-    <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span></span>
-    </button>
-    <div>
-      <ul>
-        <li>
-          <a href="/">Categories</a>
-        </li>
-        <li>
-          <a href="/sign_out">Log out</a>
-        </li>
-      </ul>
+<div class="container_home">
+  <nav>
+    <%= link_to '<', '/'%>
+    <h2>TRANSACTIONS</h2>
+    <span></span>
+  </nav>
+  <p class="total_amount">TOTAL SPENT: $ <%= @total || 0 %></p>
+  <div class="container_group">
+    <div class="group_display" >
+      <% @moves.each do |move| %>
+        <div class="group_element">
+          <div>
+            <p><%= move.name %></p>
+            <span>$ <%= move.amount %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="add_button">
+      <%= button_to 'Add Transaction', new_group_move_path(params[:id]), method: :get %>
     </div>
   </div>
-</nav>
-
-<p>Total Spent: $ <%= @total || 0 %></p>
-
-<div>
-  <% @moves.each do |move| %>
-  <div >
-    <div>
-      <div>
-        <p>
-          <%= move.name %>
-        </p>
-      </div>
-      <div>
-        <p>
-          $ <%= move.amount %>
-        </p>
-      </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<div>
-<%= button_to 'Add Transaction', new_group_move_path(params[:id]), method: :get %>
 </div>

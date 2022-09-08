@@ -195,7 +195,7 @@ text-color: #434b54; */
 .group_display {
   margin: 1rem;
   overflow-y: scroll;
-  max-height: 80vh;
+  max-height: 75vh;
 }
 
 .group_element {
@@ -220,6 +220,7 @@ text-color: #434b54; */
 
 .group_element div span {
   color: #15171a;
+  white-space: nowrap;
 }
 
 .add_button {
@@ -237,4 +238,12 @@ background-color: inherit;
   font-size: 1.5em;
   padding: 1rem;
   width: 100%;
+}
+
+.total_amount {
+  text-align: center;
+  padding: 1rem;
+  background-color: #fff;
+  color: #1b1e22;
+  font-family: 'NovaBold';
 }
