@@ -1,0 +1,23 @@
+<div class="container_home">
+  <nav>
+    <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, "/" %>
+    <h2>TRANSACTIONS</h2>
+    <span></span>
+  </nav>
+  <p class="total_amount">TOTAL SPENT: $ <%= @total || 0 %></p>
+  <div class="container_group">
+    <div class="group_display" >
+      <% @moves.each do |move| %>
+        <div class="group_element">
+          <div>
+            <p><%= move.name %></p>
+            <span>$ <%= move.amount %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="add_button">
+      <%= button_to 'Add Transaction', new_group_move_path(params[:id]), method: :get %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="content_login">
+  <%= form_with url: group_moves_path, scope: :move, method: :post do |f| %>
+    <nav >
+      <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, "/groups/#{params[:group_id]}" %>
+      <%= f.submit 'Save' %>
+    </nav>
+    <div>
+      <%= f.text_field :name, required: true, placeholder: 'Transaction Name' %>
+      <%= f.number_field :amount, step: 0.01, placeholder: 'Amount' %>
+      <div class='shared_link'>
+      <%= f.label :group_id, "Select a category" %>
+      </div>
+      <div class="select_custom">
+      <%= f.select :group_id, options_for_select(current_user.groups.map { |g| [g.name[0..20], g.id] }, selected: @group.id), {} %>
+      </div>
+      
+      <%= f.hidden_field :author_id, value: current_user.id %>
+    </div>
+  <% end %>
+</div>

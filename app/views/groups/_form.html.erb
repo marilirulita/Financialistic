@@ -1,0 +1,9 @@
+<%= form_with(model: group) do |form| %>
+  <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Category name" %>
+  <%= form.text_field :icon, autofocus: true, autocomplete: "name", placeholder: "Your link icon" %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

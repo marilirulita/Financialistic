@@ -1,0 +1,23 @@
+<div class="container_home">
+  <nav>
+    <i class="fa-solid fa-bars fa-2x"></i>
+    <h2>CATEGORIES</h2>
+    <a href="/sign_out">Log out</a>
+  </nav>
+  <div class="container_group">
+    <div class="group_display" >
+      <% @groups.each do |group|%>
+        <div onclick="window.location='/groups/<%=group.id%>'" class="group_element" >
+          <i class="fa-solid fa-<%= group.icon %> fa-4x"></i>
+          <div>
+            <p><%= group.name %></p>
+            <span >$<%= group.total_amount || 0 %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="add_button" >
+      <%= button_to 'Add a new category', new_group_path, method: :get %>
+    </div>
+  </div>
+</div>
