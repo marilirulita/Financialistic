@@ -19,13 +19,21 @@
 }
 
 @font-face {
+  font-family: 'NovaLight';
+  src:
+    url('ProximaNovaA-Light.woff2'),
+    url('ProximaNovaA-Light.woff'),
+    url('ProximaNovaA-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'KittenSwash';
   src:     
   url('KittenSwash.woff2'),
   url('KittenSwash.woff'),
   url('KittenSwash.ttf');
-font-weight: normal;
-font-style: normal;
 }
 /* main_color: #3778c2 */
 /* secondary_color: #5fb523 */
@@ -66,18 +74,35 @@ body {
 .content_splash nav {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .content_splash nav button {
-  background-color: #3778c2;
-  color: #434b54;
-  font-family: 'NovaBold';
-  font-size: 1.5em;
-  margin: 0.5em;
+  font-family: 'NovaLight';
+  border: none;
+  padding: 1rem;
+  border-radius: 3px;
 }
 
-h1 {
+.content_splash nav .log_in {
+  background-color: #3778c2;
+  width: 100%;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.content_splash nav .sign_up {
+  background-color: inherit;
+  width: 100%;
+  color: #434b54;
+  font-size: 1.5em;
+ 
+}
+
+.content_splash h1 {
   font-family: 'KittenSwash';
   color: #434b54;
   text-align: center;
+  font-size: 3em;
+  font-weight: 100;
 }
