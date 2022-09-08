@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'splash/index'
   devise_for :users
 
   devise_scope :user do
@@ -6,9 +7,9 @@ Rails.application.routes.draw do
       root to: 'groups#index', as: 'user'
     end
 
-    # unauthenticated do
-    #   root to: 'splash#index', as: 'unauthenticated_user_root'
-    # end
+    unauthenticated do
+      root to: 'splashes#index', as: 'unauthenticated_user_root'
+    end
 
     get '/sign_out', to: 'devise/sessions#destroy'
   end
