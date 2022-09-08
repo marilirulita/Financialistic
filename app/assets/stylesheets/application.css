@@ -77,14 +77,15 @@ body {
   padding: 1rem;
 }
 
-.content_splash nav button {
+.content_splash nav button,
+.reset_button {
   font-family: 'NovaLight';
   border: none;
   padding: 1rem;
   border-radius: 3px;
 }
 
-.content_splash nav .log_in {
+.log_in {
   background-color: #3778c2;
   width: 100%;
   color: #fff;
@@ -139,7 +140,7 @@ text-color: #434b54; */
   font-weight: bolder;
   text-decoration: none;
   font-size: 1.5em;
-  padding-right: 2rem;
+
 }
 
 .content_login nav input[type="submit"],
