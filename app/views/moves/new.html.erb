@@ -1,7 +1,7 @@
 <div class="content_login">
   <%= form_with url: group_moves_path, scope: :move, method: :post do |f| %>
     <nav >
-      <%= link_to '<', "/groups/#{params[:group_id]}" %>
+      <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, "/groups/#{params[:group_id]}" %>
       <%= f.submit 'Save' %>
     </nav>
     <div>

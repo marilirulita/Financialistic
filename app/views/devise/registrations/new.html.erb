@@ -1,7 +1,7 @@
 <div class="content_signup">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <nav>
-      <%= link_to "<", :back %>
+      <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, :back %>
       <h2>REGISTER</h2>
       <%= f.submit "Next" %>
     </nav>

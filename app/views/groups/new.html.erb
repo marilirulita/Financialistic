@@ -1,12 +1,16 @@
 <div class="content_login">
   <%= form_with(model: @group) do |form| %>
     <nav>
-      <%= link_to "<", :back %>
+      <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, :back %>
       <%= form.submit "Save" %>
     </nav>
     <div>
       <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Category name" %>
-      <%= form.text_field :icon, autofocus: true, autocomplete: "name", placeholder: "Icon name" %>
+
+      <div class='shared_link'>
+        <%= form.label :icon, "You can select an Icon" %>
+      </div>
+      <%= form.select :icon, options_for_select(icons_array.map { |g| [g] }, selected: "hello"), {} %>
       <%= form.hidden_field :user_id, value: current_user.id %>
     </div>
   <% end %>

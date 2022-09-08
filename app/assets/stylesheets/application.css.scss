@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "font-awesome";
+
  /* font face imports */
  @font-face {
   font-family: 'NovaBold';
@@ -48,7 +50,7 @@
 body {
   min-height: 100vh;
   margin: 0 auto;
-  background-color: hsl(240deg 7% 97%);
+  background-color: #f7f7f8;
 }
 
 .content {
@@ -144,7 +146,7 @@ body {
   border: none;
   background-color: inherit;
   color: inherit;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .content_login div,
@@ -202,6 +204,10 @@ body {
   padding: 1rem;
  margin-bottom: 1rem;
  background-color: #fff;
+}
+
+.group_element i {
+  margin-right: 1rem;
 }
 
 .group_element div {
