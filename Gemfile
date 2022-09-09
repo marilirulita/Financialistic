@@ -17,8 +17,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
 
-gem 'sassc-rails'
-
 gem 'font-awesome-sass', '~> 6.2.0'
 
 # Use the Puma web server [https://github.com/puma/puma]
