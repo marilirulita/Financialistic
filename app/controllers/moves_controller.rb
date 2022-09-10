@@ -12,7 +12,7 @@ class MovesController < ApplicationController
 
   # GET /moves/new
   def new
-    @group = Group.find(params[:group_id])
+    @group = current_user.groups.find(params[:group_id])
   end
 
   # GET /moves/1/edit
@@ -21,7 +21,7 @@ class MovesController < ApplicationController
   # POST /moves or /moves.json
   def create
     @move = Move.new(move_params)
-    @group = Group.find(params[:move][:group_id])
+    @group = current_user.groups.find(params[:move][:group_id])
 
     if @move.save
       @group.group_moves.create(move_id: @move.id)

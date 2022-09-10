@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-    @group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
     @moves = @group.group_moves.map(&:move_id)
     @moves = Move.where(id: @moves).sort_by(&:created_at).reverse
     @total = @moves.inject(0) { |sum, move| sum + move.amount }
