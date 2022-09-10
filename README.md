@@ -11,6 +11,11 @@
 - SQL
 - Rspec
 
+
+## Video presentation
+
+[Video](https://www.loom.com/share/02b7b5d1d6e244eea3c6de0f05ecd98d)
+
 ## Live Demo
 
 [Live Demo Link](https://blooming-tundra-40125.herokuapp.com/)
