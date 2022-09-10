@@ -1,0 +1,19 @@
+<div class="content_login">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <nav>
+      <%= link_to "<i class=\"fa-solid fa-arrow-left\"></i>".html_safe, :back %>
+      <%= link_to "<i class=\"fa-solid fa-house\"></i>".html_safe, '/' %>
+    </nav>
+    <div>
+      <div class='shared_link'>
+        <%= f.label :email, "Resend confirmation instructions" %>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "Email" %>
+    </div>
+    <%= f.submit "Resend confirmation instructions", class: "log_in reset_button" %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  <% end %>
+  <div class='shared_link'>
+    <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+  </div>
+</div>
