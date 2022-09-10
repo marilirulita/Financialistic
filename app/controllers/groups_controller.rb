@@ -19,9 +19,6 @@ class GroupsController < ApplicationController
     @title = 'New Category'
   end
 
-  # GET /groups/1/edit
-  def edit; end
-
   # POST /groups or /groups.json
   def create
     @group = Group.new(group_params)
@@ -30,19 +27,6 @@ class GroupsController < ApplicationController
       redirect_to groups_path
     else
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully updated.' }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
     end
   end
 

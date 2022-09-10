@@ -15,9 +15,6 @@ class MovesController < ApplicationController
     @group = current_user.groups.find(params[:group_id])
   end
 
-  # GET /moves/1/edit
-  def edit; end
-
   # POST /moves or /moves.json
   def create
     @move = Move.new(move_params)
@@ -28,19 +25,6 @@ class MovesController < ApplicationController
       redirect_to group_path(@group)
     else
       render :new, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /moves/1 or /moves/1.json
-  def update
-    respond_to do |format|
-      if @move.update(move_params)
-        format.html { redirect_to move_url(@move), notice: 'Move was successfully updated.' }
-        format.json { render :show, status: :ok, location: @move }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @move.errors, status: :unprocessable_entity }
-      end
     end
   end
 
