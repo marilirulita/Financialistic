@@ -15,8 +15,8 @@
  *= require_self
  */
 
- @import "font-awesome";
- 
+@import "font-awesome";
+
 /* font face imports */
 @font-face {
   font-family: 'NovaBold';
@@ -50,7 +50,7 @@
 }
 
 body {
-  min-height: 100v;
+  height: 100vh;
   margin: 0 auto;
   background-color: #f7f7f8;
   max-width: 450px;
@@ -58,13 +58,13 @@ body {
 
 .content {
   width: 100%;
-  height: 100vh;
+
 }
 
 /* splash view */
 .content_splash,
 .container_home {
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -208,7 +208,7 @@ body {
 .group_display {
   margin: 1rem;
   overflow-y: scroll;
-  max-height: 75vh;
+  max-height: 65vh;
 }
 
 .group_element {

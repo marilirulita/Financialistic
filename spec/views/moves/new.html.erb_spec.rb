@@ -4,8 +4,8 @@ RSpec.describe 'moves/new', type: :system do
   describe 'New' do
     before(:all) do
       Group.delete_all
-      User.delete_all 
-      
+      User.delete_all
+
       driven_by(:selenium_chrome_headless)
     end
     before(:all) do
@@ -32,6 +32,5 @@ RSpec.describe 'moves/new', type: :system do
       click_button 'Save'
       expect(page).to have_content('Test Transaction')
     end
-
   end
-  end
+end
