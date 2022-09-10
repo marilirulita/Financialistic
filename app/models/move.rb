@@ -4,8 +4,7 @@ class Move < ApplicationRecord
   has_many :groups, through: :group_moves
 
   validates :name, presence: true
-  validates :name, format: {without: /[1-9]/}
+  validates :name, format: { without: /[1-9]/ }
   validates :amount, presence: true, comparison: { greater_than: 0 }
   validates :amount, numericality: true
-
 end
