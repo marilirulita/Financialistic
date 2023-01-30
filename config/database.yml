@@ -81,6 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: financialistic_production
-  username: financialistic
-  password: <%= ENV["FINANCIALISTIC_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  
