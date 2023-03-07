@@ -78,3 +78,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+# To add webpacker to run react in rails
+gem 'jsbundling-rails'
